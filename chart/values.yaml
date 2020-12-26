@@ -1,20 +1,17 @@
 replicaCount: 1
 
+serviceAccount: website
+
 image:
   repository: nginx
-  tag: 1.19.6
   pullPolicy: IfNotPresent
 
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
 service:
-  name: wndtnl-website
+  name: website
   type: NodePort
   externalPort: 8080
   internalPort: 80
-
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
