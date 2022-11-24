@@ -2,38 +2,38 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: website
+  name: pv-adidas-a
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: website
-  namespace: website
+  name: pv-adidas-a
+  namespace: pv-adidas-a
 ---
 kind: Role
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: chart-deploy
-  namespace: website
+  namespace: pv-adidas-a
 rules:
   - apiGroups: ["", "apps"]
     resources:
     - namespaces
-    - pods    
+    - pods
     - deployments
     - services
     - secrets
     verbs: ["*"]
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: chart-deploy-binding
-  namespace: website
+  namespace: pv-adidas-a
 subjects:
   - kind: ServiceAccount
-    name: website
-    namespace: website
+    name: pv-adidas-a
+    namespace: pv-adidas-a
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

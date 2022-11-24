@@ -1,6 +1,6 @@
 replicaCount: 1
 
-serviceAccount: website
+serviceAccount: pv-adidas-a
 
 image:
   repository: nginx
@@ -11,7 +11,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 service:
-  name: website
+  name: pv-adidas-a
   type: NodePort
   externalPort: 8080
   internalPort: 80

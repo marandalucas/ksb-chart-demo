@@ -1,6 +1,6 @@
 apiVersion: v2
-name: website
-description: The company website
+name: pv-adidas-a
+description: The company pv-adidas-a
 type: application
 
 version: 0.1.0
